@@ -1,0 +1,45 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <h1 style="text-align: center;">Please Edit Your Listing</h1>
+    <br>
+    <div classs="row">
+        <div class="col-8 offset-2">
+            <form method="post" action="/listings/<%=data._id%>?_method=put" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" placeholder="title" value="<%=data.title%>" class="form-control">
+                </div>
+               <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" name="listing[description]" placeholder="description" class="form-control"><%=data.description%> </textarea>
+               </div>
+                <div>
+                    Original Image
+                    <img src="<%=originalImage%>" alt="listing image">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload New Image</label>
+                    <input type="file" name="listing[image]" placeholder="image url/link" class="form-control" >
+                </div>
+                <div class="row">
+                    
+                       
+                        <div class="mb-3">
+                            <label for="Location" class="form-label">Location</label>
+                            <input type="text" name="listing[location]" placeholder="location" value="<%=data.location%>" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" placeholder="country" value="<%=data.country%>" class="form-control">
+                     </div>
+                    
+                    <button class="btn btn-dark color-btn ">Submit</button>
+                    <br><br>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+

@@ -1,0 +1,14 @@
+.login-signup-bg {
+    min-height: 100vh;
+  }
+  .postoria-logo {
+    font-size: 2.5rem;
+    color: #003049;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .show-password-toggle {
+    cursor: pointer;
+    color: #003049;
+  }

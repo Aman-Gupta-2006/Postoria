@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate.ejs")%>
+
+<div class="row justify-content-center align-items-center min-vh-100">
+  <div class="col-12 col-md-6 col-lg-4 p-4 shadow rounded bg-white">
+    <div class="text-center mb-4">
+      <div class="postoria-logo mb-2"><i class="fa-solid fa-compass me-2"></i>Postoria</div>
+      <h2 class="fw-bold" style="font-family: 'Montserrat', sans-serif;">Sign Up for Postoria</h2>
+      <p class="text-muted">Create your account to join the community.</p>
+    </div>
+    <form method="post" action="/signup" class="needs-validation" novalidate autocomplete="on">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+          <input type="text" id="username" name="username" placeholder="Username" class="form-control" required autofocus>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+          <input type="email" id="email" name="email" placeholder="Email" class="form-control" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+          <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+          <span class="input-group-text show-password-toggle" style="user-select:none;"><i class="fa-solid fa-eye"></i></span>
+        </div>
+      </div>
+      <div class="d-grid gap-2 mt-4">
+        <button class="btn btn-success btn-lg" type="submit">Sign Up</button>
+      </div>
+      <div class="text-center mt-3">
+        <span class="text-muted">Already have an account?</span> <a href="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+

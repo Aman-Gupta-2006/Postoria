@@ -1,0 +1,62 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <h1 class="text-center">Create a new listing</h1>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form method="post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" name="listing[title]" placeholder="title" class="form-control" required>
+                    <div class="valid-feedback">
+                        You have entered the title
+                    </div>
+                    <div class="invalid-feedback">please enter the title</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="listing[description]" placeholder="description" class="form-control" required></textarea>
+                    <div class="valid-feedback">
+                        You have added the description
+                    </div>
+                    <div class="invalid-feedback">please enter the description</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image Link</label>
+                    <input type="file" id="image" name="listing[image]" placeholder="image url/link" class="form-control">
+
+                </div>
+                <div class="row justify-content-center">
+                    
+                    
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input id="location" name="listing[location]" placeholder="location" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input id="country" name="listing[country]" placeholder="country" class="form-control" required>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="listing[category]" placeholder="category" class="form-control drop-down" required>
+                        <option value="Mountains">Mountains</option>
+                        <option value="Castle">Castle</option>
+                        <option value="Amazing Pools">Amazing Pools</option>
+                        <option value="Rooms">Rooms</option>
+                        <option value="Iconic Cities">Iconic Cities</option>
+                        <option value="Trending">Trending</option>
+                        <option value="Farm">Farm</option>
+                        <option value="Arctic">Arctic</option>
+                        <option value="Camping">Camping</option>
+                    </select>
+                </div> -->
+                <button class="btn btn-dark color-btn d-block mx-auto">Submit</button>
+                <br><br>
+            </form>
+        </div>
+    </div>
+    
+</body>

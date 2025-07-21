@@ -1,0 +1,125 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/* Navbar Styles */
+.navbar {
+  height: 5rem;
+}
+
+.navbar-collapse {
+  background-color: #f8f9fa !important;
+  width: 100vw !important;
+}
+
+.fa-compass {
+  color: #003049;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222 !important;
+}
+
+/* Footer Styles */
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: #ebebee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+.f-info-links {
+  width: 100%;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-social {
+  width: 100%;
+}
+
+.f-info-social i {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+
+/* Listing Card Styles */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  width: 100% !important;
+  border-radius: 1rem !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+.color-btn {
+  background-color: #fe424d;
+  border: none !important;
+}
+
+.show-image {
+    height: 60vh;
+    width: 200vw;
+    object-fit: cover;
+  }
+
+.card-text p {
+  text-align: center !important;
+
+}
+
+.btns {
+    display: flex;
+    padding-left: 175px;
+}
+
+.btns a {
+  background-color: #fe424d;
+}
