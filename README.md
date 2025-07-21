@@ -1,63 +1,128 @@
-# Postoria 📱
+# Postoria
 
-A dynamic social media platform where users can create accounts, share listings, upload images, leave reviews, and rate content. Built with modern web technologies for a seamless and interactive user experience.
+A modern, full-stack social platform Postoria, focused on sharing and discovering unique places and experiences. Built with Node.js, Express, MongoDB Atlas, Passport.js, EJS, and Cloudinary.
 
-## 🌟 About Postoria
+## Features
+- User authentication (signup, login, logout) with Passport.js
+- Secure session management with MongoDB session store
+- Listings: Create, view, edit, and delete places
+- Reviews: Add and manage reviews for listings
+- Search listings by location/country
+- Responsive, modern UI with EJS, Bootstrap, and custom CSS
+- Image uploads via Cloudinary
+- Environment-based configuration for secrets and database
 
-Postoria is a comprehensive listing and review platform that combines social media features with marketplace functionality. Users can create personalized accounts, share their favorite places, experiences, or products through listings, engage with the community through reviews and ratings, and discover amazing content shared by others.
+## Tech Stack
+- Node.js, Express.js
+- MongoDB Atlas & Mongoose
+- Passport.js (local strategy)
+- EJS templating
+- Bootstrap & custom CSS/JS
+- Cloudinary (image hosting)
+- dotenv (environment variables)
+- connect-mongo (persistent session store)
 
-## ✨ Key Features
+## Getting Started
 
-### 🔐 User Authentication & Accounts
-- **Secure Registration**: Create personalized user accounts
-- **Authentication**: Secure login/logout with Passport.js
-- **Session Management**: Persistent user sessions with secure cookies
-- **User Profiles**: Manage personal information and listings
+### Prerequisites
+- Node.js (v18+ recommended)
+- MongoDB Atlas account
+- Cloudinary account
 
-### 📝 Content Creation & Sharing
-- **Create Listings**: Share places, experiences, or products with the community
-- **Image Upload**: Upload high-quality images with Cloudinary integration
-- **Rich Descriptions**: Add detailed descriptions and information
-- **Location Tagging**: Tag locations and countries for better discoverability
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone git https://github.com/Aman-Gupta-2006/Postoria.git
+   cd Postoria
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create a `.env` file in the root directory with the following:
+   ```env
+   ATLASDB_URL=your_mongodb_atlas_connection_string
+   SECRET=your_session_secret
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+   CLOUDINARY_KEY=your_cloudinary_api_key
+   CLOUDINARY_SECRET=your_cloudinary_api_secret
+   PORT=8080 # or any port you prefer
+   ```
+4. (Optional) Seed the database with sample data:
+   ```sh
+   node data/initialize.js
+   ```
 
-### 🌐 Social Interaction
-- **Review System**: Leave detailed reviews and feedback on listings
-- **Rating System**: Rate content to help others discover quality listings
-- **Community Engagement**: Interact with other users' content
-- **User-Generated Content**: Build a community-driven platform
+### Running the App
+- Development:
+  ```sh
+  npm run dev
+  ```
+- Production:
+  ```sh
+  npm start
+  ```
 
-### 🛡️ Security & Privacy
-- **Authorization Controls**: Users can only edit/delete their own content
-- **Input Validation**: Comprehensive data validation for security
-- **Secure File Upload**: Safe image handling and storage
-- **Flash Messaging**: Real-time feedback for user actions
+Visit `http://localhost:8080` (or your chosen port) in your browser.
 
-### 🎨 User Experience
-- **Responsive Design**: Optimized for desktop and mobile devices
-- **Interactive UI**: Built with EJS templating for smooth navigation
-- **Real-time Feedback**: Instant notifications and status updates
-- **Intuitive Interface**: User-friendly design for all skill levels
 
-## 🛠️ Technology Stack
 
-### Backend Architecture
-- **Node.js** - Server-side runtime environment
-- **Express.js** - Robust web application framework
-- **MongoDB** - NoSQL database with Mongoose ODM
-- **Passport.js** - Authentication and authorization middleware
-- **Cloudinary** - Cloud-based image storage and optimization
-- **Multer** - Multipart form data and file upload handling
+## Folder Structure
+```
+app.js
+cloudConfig.js
+middleware.js
+package.json
+schema.js
+controllers/
+  listings.js
+  review.js
+  user.js
+data/
+  data.js
+  initialize.js
+model/
+  data.js
+  reviews.js
+  user.js
+public/
+  css/
+    star.css
+    style.css
+  javascript/
+    script.js
+Route/
+  listings.js
+  reviews.js
+  user.js
+utils/
+  ExpressError.js
+  wrapAsync.js
+views/
+  includes/
+    flash.ejs
+    footer.ejs
+    navbar.ejs
+  layouts/
+    boilerplate.ejs
+  listings/
+    edit.ejs
+    error.ejs
+    form.ejs
+    index.ejs
+    show.ejs
+  users/
+    login.ejs
+    signup.ejs
+```
 
-### Frontend Technologies
-- **EJS** - Dynamic templating engine
-- **EJS Mate** - Enhanced layout support
-- **Bootstrap** - Responsive CSS framework
-- **Custom CSS** - Tailored styling and animations
-- **JavaScript** - Interactive client-side functionality
 
-### Security & Validation
-- **Joi** - Schema validation and data sanitization
-- **Express Session** - Secure session management
+## License
+ISC
+
+---
+
+For questions or contributions, open an issue or pull request!
 - **Connect Flash** - User notification system
 - **Method Override** - RESTful routing support
 - **Cookie Parser** - Secure cookie handling
@@ -146,27 +211,6 @@ postoria/
 
    Access Postoria at `http://localhost:8080`
 
-## 🎯 How to Use Postoria
-
-### For New Users
-1. **Join the Community**: Register for a free account
-2. **Explore Content**: Browse listings shared by the community
-3. **Discover Places**: Use search and filters to find interesting content
-4. **Engage**: Leave reviews and ratings on listings you find interesting
-
-### For Content Creators
-1. **Create Listings**: Share your favorite places, experiences, or recommendations
-2. **Upload Images**: Add beautiful photos to make your listings stand out
-3. **Build Your Profile**: Establish your presence in the community
-4. **Manage Content**: Edit or remove your listings as needed
-5. **Engage with Feedback**: Respond to reviews and build relationships
-
-### For Community Members
-1. **Leave Reviews**: Share your experiences and help others
-2. **Rate Content**: Use the rating system to highlight quality listings
-3. **Follow Trends**: Discover popular and trending content
-4. **Connect**: Build connections through shared interests
-
 ## 🔗 API Endpoints
 
 ### Content Management
@@ -213,18 +257,6 @@ We welcome contributions from the community! Here's how you can help:
 - **Social Features**: Following users, like/favorite systems
 - **Messaging**: Direct messaging between users
 - **Analytics**: User engagement and content performance insights
-- **API**: RESTful API for third-party integrations
 
-## 📞 Support & Community
-
-- **Issues**: Report bugs or request features via GitHub Issues
-- **Documentation**: Comprehensive guides and API documentation
-- **Community**: Join our community discussions and feedback sessions
-
-## 📄 License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
-
----
 
 **Postoria** - *Connecting communities through shared experiences and discoveries* 🌟
