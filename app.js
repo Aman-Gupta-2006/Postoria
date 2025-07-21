@@ -63,15 +63,18 @@ app.use(passport.session());
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
+
 passport.deserializeUser(User.deserializeUser());
 
-// Global Middleware for Template Variables
 app.use((req, res, next) => {
     res.locals.currUser = req.user;
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     next();
 });
+
+
+
 
 // Routes
 app.use("/listings", listingsRouter);
