@@ -49,7 +49,7 @@ module.exports.newLisitng = async (req, res) => {
   newLisitng["image"].url = url;
   newLisitng["image"].filename = filename;
   await newLisitng.save();
-  req.flash("Success","New Listing is Added!");
+  req.flash("success","New Listing is Added!");
   res.redirect("/listings");
 }
 
@@ -64,7 +64,7 @@ module.exports.renderEditForm = async (req, res) => {
   if(originalImage){
     originalImage = originalImage.replace("/upload", "/upload/w_250");
   }
-  req.flash("Success","Listing is Edited!");
+  req.flash("success","Listing is Edited!");
   res.render("listings/edit.ejs",{data, originalImage});
 }
 
@@ -83,6 +83,6 @@ module.exports.update = async (req, res) => {
 module.exports.deleteListing = async (req, res) => {
   let {id} = req.params;
   await Listing.findByIdAndDelete(id);
-  req.flash("Success","Listing is deleted!");
+  req.flash("success","Listing is deleted!");
   res.redirect("/listings");
 }
