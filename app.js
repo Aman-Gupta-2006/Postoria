@@ -26,6 +26,14 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 const cookieParser=require("cookie-parser");
 app.use(cookieParser());
+
+app.use((req, res, next)=>{
+    res.locals.currUser=req.user;
+    res.locals.success=req.flash("Success");
+    res.locals.error=req.flash("error");
+    next();
+});
+
 const sessionOptions = {
     secret: process.env.SECRET,
     resave: false,
@@ -49,12 +57,8 @@ passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use((req, res, next)=>{
-    res.locals.currUser=req.user;
-    res.locals.success=req.flash("Success");
-    res.locals.error=req.flash("error");
-    next();
-});
+
+
 
 // app.get("/demoUser", async(req, res)=>{
 //     let fakeUser=new user({
